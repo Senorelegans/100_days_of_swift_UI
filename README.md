@@ -1,2 +1,6 @@
 # 100_days_of_swift_UI
-Doing the 100 days of swift UI
+Doing the #100DaysOfSwiftUI challenge
+
+Follow me on twitter !!!
+@senorelegans2
+
