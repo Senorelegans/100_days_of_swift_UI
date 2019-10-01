@@ -1,7 +1,5 @@
 
 
-
-
 // Dictionaries
 let favoriteIceCream = [
     "Paul": "Chocolate",
@@ -222,3 +220,50 @@ result("London")
 result("London")
 
 
+
+////////////// STRUCTS
+// didSet reports every time var amount changes
+struct Progress {
+    var task: String
+    var amount: Int {
+        didSet {
+            print("\(task) is now \(amount)% complete")
+        }
+    }
+}
+var progress = Progress(task: "Loading data", amount: 0)
+progress.amount = 30
+progress.amount = 80
+progress.amount = 100
+
+
+
+// Mutating func can change properties that normally shouldnt change
+struct Person {
+    var name: String
+
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+
+var person = Person(name: "Ed")
+person.makeAnonymous()
+
+
+// Static allows you to share var accross multiple creations
+
+struct Student {
+    static var classSize = 0
+    var name: String
+
+    init(name: String) {
+        self.name = name
+        Student.classSize += 1
+    }
+}
+
+
+let ed = Student(name: "Ed")
+let taylor = Student(name: "Taylor")
+print(Student.classSize)
